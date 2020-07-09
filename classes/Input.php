@@ -26,6 +26,8 @@
 
 		public static function file($item) {
 			if(isset($_FILES[$item]['name'])) {
+				$uploadDestination = "uploads/";
+            	move_uploaded_file($_FILES[$item]['tmp_name'], $uploadDestination . $_FILES[$item]['name']);
 				return $_FILES[$item]['name'];
 			}
 		}

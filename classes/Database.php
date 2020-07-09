@@ -44,24 +44,32 @@ class Database {
 
 	public function action($action, $table, $where = array()) {
 
-		if (count($where) === 3) {	//Allow for no where
-			$operators = array('=','>','<','>=','<=','<>');
+		if(!empty($where)) {
 
-			$field		= $where[0];
-			$operator	= $where[1];
-			$value		= $where[2];
+			if (count($where) === 3) {	//Allow for no where
+				$operators = array('=','>','<','>=','<=','<>');
 
-			if (in_array($operator, $operators)) {
-				$sql = "{$action} FROM {$table} WHERE ${field} {$operator} ?";
-				if (!$this->query($sql, array($value))->error()) {
-					return $this;
+				$field		= $where[0];
+				$operator	= $where[1];
+				$value		= $where[2];
+
+				if (in_array($operator, $operators)) {
+					$sql = "{$action} FROM {$table} WHERE ${field} {$operator} ?";
+					if (!$this->query($sql, array($value))->error()) {
+						return $this;
+					}
 				}
+			}
+		} else {
+			$sql = "{$action} FROM {$table}";
+			if (!$this->query($sql)->error()) {
+				return $this;
 			}
 		}
 		return false;
 	}
 
-	public function get($table, $where) {
+	public function get($table, $where = array()) {
 		return $this->action('SELECT *', $table, $where); //ToDo: Allow for specific SELECT (SELECT username)
 	}
 

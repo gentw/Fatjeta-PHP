@@ -1,6 +1,8 @@
 <?php
 
 class Gallery {
+	private $_db, 
+		$_data = array();
 
 	public function __construct($user = null) {
 		$this->_db = Database::getInstance();
@@ -16,7 +18,24 @@ class Gallery {
 		
 	}
 
-	public function uploadImage() {
+	public function fetchGallery() {		
+			
+			$data = $this->_db->get('gallery', []);
+
+			if ($data->count()) {
+				$this->_data = $data;
+			}
+
+
 		
+		return null;
+	}
+
+	public function data() {
+		return $this->_data;
+	}
+
+	public function uploadImage() {
+
 	}
 }
