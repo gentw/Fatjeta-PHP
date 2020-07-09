@@ -19,6 +19,8 @@ class Database {
 	}
 
 	public function query($sql, $params = array()) {
+	
+
 		$this->_error = false;
 		if ($this->_query = $this->_pdo->prepare($sql)) {
 			$x = 1;
@@ -41,6 +43,7 @@ class Database {
 	}
 
 	public function action($action, $table, $where = array()) {
+
 		if (count($where) === 3) {	//Allow for no where
 			$operators = array('=','>','<','>=','<=','<>');
 
@@ -67,6 +70,7 @@ class Database {
 	}
 
 	public function insert($table, $fields = array()) {
+
 		if (count($fields)) {
 			$keys 	= array_keys($fields);
 			$values = null;
@@ -81,6 +85,8 @@ class Database {
 			}
 
 			$sql = "INSERT INTO {$table} (`".implode('`,`', $keys)."`) VALUES({$values})";
+
+
 
 			if (!$this->query($sql, $fields)->error()) {
 				return true;

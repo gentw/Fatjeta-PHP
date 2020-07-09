@@ -7,4 +7,12 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
+<?php
+$user = new User();
+
+	if ($user->isLoggedIn()) {
+		require_once 'template-parts/navbar.php';
+	}
+?>
+
 <div class="container">

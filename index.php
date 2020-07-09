@@ -1,12 +1,17 @@
 <?php
-	require_once 'core/init.php';
 
+	require_once 'core/init.php';
 
 	if(isset($_GET['page'])) {
 		$page = $_GET['page'];
 	} else {
 		$page = 'kyqu';
 	}
+
+	$user = new User();
+	if ($user->isLoggedIn()) {
+		Redirect::to('/dash.php');
+	} 
 
 	require_once 'template-parts/header.php';
 
@@ -19,3 +24,4 @@
 	}
 
 	require_once 'template-parts/footer.php';
+

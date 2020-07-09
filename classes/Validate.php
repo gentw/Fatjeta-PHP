@@ -8,14 +8,30 @@
 			$this->_db = Database::getInstance();
 		}
 
+		private function search_revisions($dataArray, $search_value, $key_to_search) {
+       
+	        $keys = array();
+	        foreach ($dataArray as $key => $cur_value) {
+	            if ($cur_value[$key_to_search] == $search_value) {
+	                return true;
+	            }
+	        }
+	        return false;
+	    }
+
 		public function check($source, $items = array()) {
 			foreach ($items as $item => $rules) {
 				foreach ($rules as $rule => $rule_value) {
-					$value 	= trim($source[$item]);
-					$item 	= escape($item);
+			
+					if(isset($source[$item])) {
+						$value 	= trim($source[$item]);
+						$item 	= escape($item);
+					}
 					
 					if ($rule === 'required' && empty($value)) {
 						$this->addError("{$item} is required");	//ToDo: Pick up 'name' value
+					} else if($rule === 'required' && !isset($source[$item])) {
+						$this->addError("{$item} is required");
 					} else if (!empty($value)) {
 						switch ($rule) {
 							case 'min':
