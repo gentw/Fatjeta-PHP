@@ -1,7 +1,8 @@
 <?php
 class Database {
 	private static $_instance = null;
-	private $_pdo, $_query, $_error=false, $_results, $_count = 0;
+	private $_pdo, $_query;
+	public $_error=false, $_results, $_count = 0;
 
 	private function __construct() {
 		try {

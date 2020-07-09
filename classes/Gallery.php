@@ -23,7 +23,7 @@ class Gallery {
 			$data = $this->_db->get('gallery', []);
 
 			if ($data->count()) {
-				$this->_data = $data;
+				$this->_data = $data->_results;
 			}
 
 
