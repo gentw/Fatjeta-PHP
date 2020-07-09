@@ -23,5 +23,11 @@
 			}
 			return '';
 		}
+
+		public static function file($item) {
+			if(isset($_FILES[$item]['name'])) {
+				return $_FILES[$item]['name'];
+			}
+		}
 	}
 ?>

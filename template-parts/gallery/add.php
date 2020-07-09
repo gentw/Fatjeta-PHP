@@ -29,7 +29,7 @@ if(Token::check(Input::get('token'))) {
 		try {
 			$galeria->create(array(
 				'title' 		=> Input::get('title'),
-				'image' 		=> Input::get('image'),
+				'image' 		=> Input::file('image'),
 				'description' 	=> Input::get('description'),
 				'user_id'		=> 3
 			));

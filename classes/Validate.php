@@ -31,7 +31,11 @@
 					if ($rule === 'required' && empty($value)) {
 						$this->addError("{$item} is required");	//ToDo: Pick up 'name' value
 					} else if($rule === 'required' && !isset($source[$item])) {
-						$this->addError("{$item} is required");
+						
+						if(!Input::file($item)) {
+							$this->addError("{$item} is required");
+						}
+
 					} else if (!empty($value)) {
 						switch ($rule) {
 							case 'min':
