@@ -40,7 +40,8 @@ if(Token::check(Input::get('token'))) {
 				'title' 		=> Input::get('title'),
 				'image' 		=> $image,
 				'description' 	=> Input::get('description'),
-				'user_id'		=> $user_id
+				'user_id'		=> $user_id,
+				'modified'		=> 1
 			));
 
 			Redirect::to('/gallery.php');
