@@ -9,6 +9,19 @@
 
 
 
+	if(isset($_GET['action'])) {
+		if($_GET['action'] == "delete") {
+			if(isset($_GET['id'])) {
+				$gallery->delete($_GET['id']);
+				Redirect::to('/gallery.php');
+			}
+		} else {
+			die("Gabim!");
+		}
+		
+	}
+
+
 
 ?>
 
@@ -36,7 +49,7 @@
 		<td><img width="200" src="/uploads/<?php echo $g->image ?>" alt="photo"></td>
 		<td><?php echo $g->title; ?></td>
 		<td>Uploaded by: <?php echo $g->username; ?></td>
-		<td><a href="?action=edit&id=<?php echo $g->id; ?>">Ndrysho | Fshije</td>
+		<td><a href="?action=edit&id=<?php echo $g->id; ?>">Ndrysho</a> | <a href="?action=delete&id=<?php echo $g->id; ?>">Fshije</a></td>
 	<?php } ?>
 	
     </tbody>

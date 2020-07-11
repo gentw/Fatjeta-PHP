@@ -21,11 +21,18 @@ class Gallery {
 	public function edit($id, $fields = array()) {
 
 		if(!$this->_db->update('gallery', $id, $fields)) {
-			throw new Exception('Ndodhi nje problem gjate krijimit te llogarise tuaj!');
+			throw new Exception('Ndodhi nje problem gjate ndryshimit te llogarise tuaj!');
 		}
 		
 	}
 
+	public function delete($id) {
+
+		if(!$this->_db->delete('gallery', array('id', '=', $id))) {
+			throw new Exception('Ndodhi nje problem gjate fshirjes te llogarise tuaj!');
+		}
+		
+	}
 
 
 	public function fetchGallery($rel = array()) {		
@@ -60,4 +67,7 @@ class Gallery {
 		}
 		return false;
 	}
+
+
+
 }
