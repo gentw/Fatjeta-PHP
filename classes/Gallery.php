@@ -18,6 +18,16 @@ class Gallery {
 		
 	}
 
+	public function edit($id, $fields = array()) {
+
+		if(!$this->_db->update('gallery', $id, $fields)) {
+			throw new Exception('Ndodhi nje problem gjate krijimit te llogarise tuaj!');
+		}
+		
+	}
+
+
+
 	public function fetchGallery($rel = array()) {		
 			
 			$data = $this->_db->get('gallery', [], $rel);
@@ -35,14 +45,17 @@ class Gallery {
 		return $this->_data;
 	}
 
-	public function find($user = null) {
-		if($user) {
-			
-			$data = $this->_db->get('users', array($fields, '=', $user));
+	public function find($id = null) {
+		if($id) {
+			$field = 'id';
+			$data = $this->_db->get('gallery', array($field, '=', $id));
 
 			if ($data->count()) {
 				$this->_data = $data->first();
+				//print_r($this->_data);
 				return true;
+			} else {
+				die("Nuk u gjet!");
 			}
 		}
 		return false;

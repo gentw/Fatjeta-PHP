@@ -36,6 +36,7 @@
 		<td><img width="200" src="/uploads/<?php echo $g->image ?>" alt="photo"></td>
 		<td><?php echo $g->title; ?></td>
 		<td>Uploaded by: <?php echo $g->username; ?></td>
+		<td><a href="?action=edit&id=<?php echo $g->id; ?>">Ndrysho | Fshije</td>
 	<?php } ?>
 	
     </tbody>
