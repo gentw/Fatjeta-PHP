@@ -42,8 +42,11 @@ class Database {
 
 		return $this;
 	}
-
-	public function action($action, $table, $where = array()) {
+/*SELECT *
+    FROM users u 
+    INNER JOIN gallery g ON g.user_id = u.id
+    SELECT g.*, u.* FROM users u INNER JOIN gallery g ON g.user_id = u.id */
+	public function action($action, $table, $where = array(), $rel = array()) {
 
 		if(!empty($where)) {
 
@@ -61,6 +64,24 @@ class Database {
 					}
 				}
 			}
+		} else if (!empty($rel)) { // array(parent, child)
+			if(count($rel) === 3)
+				$parent = $rel[0]; // user
+				$child = $rel[1]; // gallery
+				$needed_attr_of_parent = $rel[2]; 
+
+				$parent_alias = substr($parent, 0, 1);
+				$child_alias = substr($child, 0, 1);
+
+				// if parent is written in plural remove the s at the end.
+				$parent_attribute = (substr($parent, -1) === 's') ? rtrim($parent, 's') : $parent;
+
+			$sql = "SELECT {$child_alias}.*, {$parent_alias}.{$needed_attr_of_parent} FROM {$parent} {$parent_alias} INNER JOIN {$child} {$child_alias} ON {$child_alias}.user_id = {$parent_alias}.id";
+
+			
+			if (!$this->query($sql)->error()) {
+				return $this;
+			}
 		} else {
 			$sql = "{$action} FROM {$table}";
 			if (!$this->query($sql)->error()) {
@@ -70,8 +91,8 @@ class Database {
 		return false;
 	}
 
-	public function get($table, $where = array()) {
-		return $this->action('SELECT *', $table, $where); //ToDo: Allow for specific SELECT (SELECT username)
+	public function get($table, $where = array(), $rel = array()) {
+		return $this->action('SELECT *', $table, $where, $rel); //ToDo: Allow for specific SELECT (SELECT username)
 	}
 
 	public function delete($table, $where) {

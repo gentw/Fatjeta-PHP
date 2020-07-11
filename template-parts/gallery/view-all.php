@@ -2,7 +2,11 @@
 	
 	$gallery = new Gallery();
 
-	$gallery->fetchGallery();
+	//$user_id = $user->data()->id;
+							// parenti, child, atributi qe na nevojitet me ju qas.
+	$gallery->fetchGallery(array('users','gallery', 'username'));
+
+
 
 
 
@@ -14,7 +18,7 @@
     <tr>
         <th scope="col">#</th>
         <th scope="col">Title</th>
-        <th scope="col">Operations</th>
+        <th scope="col">Author</th>
     </tr>
     </thead>
     <tbody>
@@ -31,7 +35,7 @@
 	</tr>
 		<td><img width="200" src="/uploads/<?php echo $g->image ?>" alt="photo"></td>
 		<td><?php echo $g->title; ?></td>
-		<td><?php echo $g->description; ?></td>
+		<td>Uploaded by: <?php echo $g->username; ?></td>
 	<?php } ?>
 	
     </tbody>

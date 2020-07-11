@@ -18,10 +18,10 @@ class Gallery {
 		
 	}
 
-	public function fetchGallery() {		
+	public function fetchGallery($rel = array()) {		
 			
-			$data = $this->_db->get('gallery', []);
-
+			$data = $this->_db->get('gallery', [], $rel);
+			// var_dump($data);
 			if ($data->count()) {
 				$this->_data = $data->_results;
 			}
@@ -35,7 +35,16 @@ class Gallery {
 		return $this->_data;
 	}
 
-	public function uploadImage() {
+	public function find($user = null) {
+		if($user) {
+			
+			$data = $this->_db->get('users', array($fields, '=', $user));
 
+			if ($data->count()) {
+				$this->_data = $data->first();
+				return true;
+			}
+		}
+		return false;
 	}
 }

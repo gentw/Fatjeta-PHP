@@ -25,13 +25,14 @@ if(Token::check(Input::get('token'))) {
 
 	if($validation->passed()) {
 		$galeria = new Gallery();
+		$user_id = $user->data()->id;
 
 		try {
 			$galeria->create(array(
 				'title' 		=> Input::get('title'),
 				'image' 		=> Input::file('image'),
 				'description' 	=> Input::get('description'),
-				'user_id'		=> 3
+				'user_id'		=> $user_id
 			));
 
 			Redirect::to('/gallery.php');
