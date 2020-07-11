@@ -3,29 +3,67 @@
 	require_once 'core/init.php';
 
 	$user = new User();
+	$message = new Message();
 
-	if ($user->isLoggedIn()) {
 
-		if($user->isAdmin($user->data()->role)) {
-			
+	//$user_id = $user->data()->id;
+							// parenti, child, atributi qe na nevojitet me ju qas.
+	$message->fetchMessages();
+
+
+	if ($user->isLoggedIn()) {		
 
 		require_once 'template-parts/header.php';
-		
 
 		?>
 
 		<div class="container">
+			<?php 
+			if($user->isAdmin($user->data()->role)) {
 
-			<h2>Hello <?php print_r($user->data()->first_name);?></h2>
+				$messageData = (array) $message->data();   
+
+
+    				
+			?>
+			<br>
+			<h2>Mesazhet e pranuara nga kontakt forma:</h2>
+			<table class="table">
+			  <thead>
+			    <tr>
+			      <th scope="rol">Nr</th>
+			      <th scope="col">Emri</th>
+			      <th scope="col">Email</th>
+			      <th scope="col">Mesazhi</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			<?php 
+				$i=1;
+			  	foreach($messageData as $m) {
+			?>
+			    <tr>
+			      <th scope="row"><?php echo $i++; ?></th>
+			      <td><?php echo $m->name ?></td>
+			      <td><?php echo $m->email ?></td>
+			      <td><?php echo $m->message ?></td>
+			    </tr>
+			<?php } ?>
+			    
+			  </tbody>
+			</table>
+			<?php 
+				
+			} else {
+				echo "<br><h3>Hey, per te menaxhuar permbajtjen navigoni ne menyne e siperme.</h3>";
+			} ?>
 
 		</div>
 
 		<?php
 		require_once 'template-parts/footer.php';
-		}
-		else {
-			echo "Na falni, por ju jeni i regjistruar si perdorues i thjeshte, nuk mund te merrni qasje ne panel.";
-		}
+		
+		
 	} else {
 		Redirect::to('/');
 	}
