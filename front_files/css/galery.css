@@ -1,0 +1,322 @@
+@font-face {
+    font-family: 'playfair_displayregular';
+    font-weight: normal;
+    font-style: normal;
+}
+
+#logo-1{
+    height: 100px;
+    width: 100px;
+}
+
+body {
+    font-family: 'playfair_displayregular';
+    
+}
+
+a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.clearfix {
+    clear: both;
+}
+
+/* Wrapper */
+
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+
+/* Header */
+
+#header {
+    margin: 66px 0 93px 0;
+}
+
+#header > a {
+    float: left;
+    text-transform: uppercase;
+    color: #000;
+    font-size: 30px;
+}
+
+/* Menu */
+
+#menu {
+    display: flex;
+    justify-content: right;
+    list-style-type: none;
+
+}
+
+#menu li {
+    display: inline-block;
+    margin-right: 60px;
+    
+}
+
+#menu li:last-child {
+    margin-right: 0;
+}
+
+#menu li a {
+    text-transform: uppercase;
+    color: #EB984E;
+    font-size: 25px;
+}
+
+#menu li a:hover {
+    text-decoration: underline;
+
+}
+
+/* Banner */
+
+#banner {
+    margin-bottom: 95px;
+}
+
+.banner-pic{
+    height: 600px;
+    width: 960px;
+}
+
+/* Content & Article */
+
+#content a,
+.article a {
+    color: #b4ad9e;
+    text-transform: uppercase;
+    color: black;
+}
+
+#content {
+    padding: 0 72px;
+    margin-bottom: 130px;
+    
+}
+
+/* Articles */
+
+.articles {
+    padding: 0 72px;
+    margin-bottom: 120px;
+    width: 816px;
+    justify-content: ;
+}
+.more{
+    height: 272px;
+    width: 400px;
+}
+.wine{
+    width: 400px;
+    height: 260;
+}
+
+.ouside{
+    width: 400px;
+    height: 265px;
+
+}
+
+.pic{
+    width: 400px;
+    height: 265px;
+    
+}
+
+
+.article {
+    width: 400px;
+    margin-bottom: 125px;
+   
+}
+
+.article img {
+    margin-bottom: 30px;
+}
+
+.left {
+    float: left;
+    color: black;
+}
+
+.right {
+    float: right;
+    color: black;
+}
+
+/* Newsletter */
+
+
+
+
+
+
+
+
+
+
+
+
+/* Load */
+
+.load {
+    text-align: center;
+}
+
+.load a {
+    border: 1px solid #626262;
+    padding: 20px 30px;
+    color: #626262;
+    font-size: 20px;
+}
+
+.load a:hover {
+    color: #ffffff;
+    background-color: #626262;
+}
+
+/* Footer */
+
+#footer {
+    background-color:#efd9c2;
+    padding: 5px 0;
+}
+
+#footer ul {
+    list-style-type: none;
+}
+
+#footer ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#footer ul li:last-child {
+    margin-right: 0;
+}
+
+#footer ul li a {
+    font-size: 14px;
+    color: #000000;
+}
+
+#newsletter h2{
+    font-size: 30px;
+    color: #333333;
+    letter-spacing: 2px;
+    margin-bottom: 52px;
+    
+    
+}
+
+.fotot{
+    text-align: center;
+    font-size: 30px;
+    font-family: Helvetica;
+}
+.img-area{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.single-img{
+    padding: 0 20px 20px;
+}
+.img:hover{
+    opacity: 5;
+    transition: 3s;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color:#fcf5e8;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.slidershow{
+  width: 1000px;
+  height: 700px;
+  overflow: hidden;
+}
+.middle{
+    position: relative;
+   
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 35px;
+}
+.navigation{
+  position: absolute;
+  bottom: 20px;
+ 
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.bar{
+  width: 70px;
+  height: 10px;
+  border: 2px solid rgb(2, 2, 2);
+  margin: 6px;
+  cursor: pointer;
+  transition: 1s;
+}
+.bar:hover{
+  background: rgb(2, 2, 2);
+}
+
+input[name="r"]{
+    position: absolute;
+    visibility: hidden;
+}
+
+.slides{
+  width: 500%;
+  height: 600px;
+  display: flex;
+}
+
+.slide{
+  width: 20%;
+  transition: 1s;
+  background-size: cover;
+}
+.slide img{
+  width: 100%;
+  height: 100%;
+}
+
+#r1:checked ~ .s1{
+  margin-left: 0;
+}
+#r2:checked ~ .s1{
+  margin-left: -20%;
+}
+#r3:checked ~ .s1{
+  margin-left: -40%;
+}
+#r4:checked ~ .s1{
+  margin-left: -60%;
+}
+#r5:checked ~ .s1{
+  margin-left: -80%;
+}
