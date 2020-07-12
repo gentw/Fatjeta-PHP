@@ -61,11 +61,11 @@
 
 					$user->create(array(
 						'username'	=> Input::get('username'),
-						'password'	=> Hash::make(Input::get('password'), $salt),
+						'password'	=> Hash::make(Input::get('password')),
 						'first_name' => Input::get('first_name'),
 						'last_name'	=> Input::get('last_name'),
 						'role'		=> $role,
-						'salt'		=> $salt
+						'salt'		=> '#Un3j4mF4tj3t4#1232#50ftw4r3d3v3l0p3r#'
 
 					));
 

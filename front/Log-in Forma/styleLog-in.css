@@ -1,0 +1,92 @@
+body{
+	background: url(Fotoja1.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: monospace;
+	background-color: #331400 ;
+}
+
+.Titulli-Log-in
+{
+	margin-top: 100px;
+	color: #fff;
+	transition: all 4s ease-in-out;
+}
+.Titulli-Log-in h1
+{
+	font-size: 32px;
+	line-height: 10px;
+	color: wheat;
+	font-style: normal;
+	text-transform: uppercase;
+}
+
+.Titulli-Log-in h2
+{
+	font-size: 16px;
+	color: wheat;
+}
+
+form
+{
+	margin-top: 50px;
+	transition: all 4s ease-in-out;
+}
+
+.login-control
+{
+	width: 500px;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid orange;
+	color: #FFFFFF;
+	font-size: 18px ;
+	margin-bottom: 16px;
+}
+input
+{
+	height: 45px;
+}
+
+.login-controlSubmit
+{
+	width: 500px;
+	background: #EB984E ;
+	border-color: transparent ;
+	color: #fff;
+	font-size: 20px ;
+	font-weight: bold ;
+	letter-spacing: 2px;
+	height: 50px ;
+	margin-top: 20px ;
+}
+
+.login-controlSubmit:hover
+{
+	background-color: #f44336 ;
+	cursor: pointer;
+}
+/*
+::-webkit-input-placeholder { 
+  color: #fff9e6 ;
+}
+*/
+.forms{
+	position: relative;
+}
+.register-form{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 0;
+	display: none;
+}
+form{
+	padding: 0;
+	margin: 0;
+}
