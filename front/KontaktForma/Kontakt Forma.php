@@ -42,7 +42,10 @@
 	</div>
 
 
-
+	<?php
+		include '../../core/init_front.php';			
+			$message = new Message();
+	?>
 
 	<div class = "Kontakt Forma">
 		<form id = "Kontakt Forma" method = "post" action = "#" onsubmit="return validimiKontaktFormes();">
