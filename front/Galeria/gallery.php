@@ -16,16 +16,16 @@
 
           <ul id="menu">
               <li>
-                  <a href="../HomePage/index.html">Home</a>
+                  <a href="../HomePage/index.php">Home</a>
               </li>
               <li>
-                  <a href="../about.html">About us</a>
+                  <a href="../about.php">About us</a>
               </li>
               <li>
                   <a href="#">Gallery</a>
               </li>
               <li>
-                  <a href="../KontaktForma/Kontakt Forma.html">Contact us</a>
+                  <a href="../KontaktForma/Kontakt Forma.php">Contact us</a>
               </li>
           </ul>
       </div>

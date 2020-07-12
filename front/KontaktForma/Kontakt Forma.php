@@ -21,13 +21,13 @@
 
 		<ul id="menu">
 			<li>
-				<a href="../HomePage/index.html">Home</a>
+				<a href="../HomePage/index.php">Home</a>
 			</li>
 			<li>
-				<a href="../about.html">About us</a>
+				<a href="../about.php">About us</a>
 			</li>
 			<li>
-				<a href="../Galeria/gallery.html">Gallery</a>
+				<a href="../Galeria/gallery.php">Gallery</a>
 			</li>
 			<li>
 				<a href="#">Contact us</a>
@@ -44,18 +44,26 @@
 
 	<?php
 		include '../../core/init_front.php';			
-			$message = new Message();
+		$message = new Message();
+		
+		$message->create(array(
+			'name'	=> Input::get('name'),
+			'email'	=> Input::get('email'),
+			'message' => Input::get('message')
+		));
+		
+		
 	?>
 
 	<div class = "Kontakt Forma">
-		<form id = "Kontakt Forma" method = "post" action = "#" onsubmit="return validimiKontaktFormes();">
+		<form id = "Kontakt Forma" action="" method = "post" onsubmit="return validimiKontaktFormes();">
 			
 			<input id="name" name = "name" type  = "text" class = "form-control" placeholder = "Shtyp Emrin..."><br>
 
 			<input id="email" name = "email" type  = "email" class = "form-control" placeholder = "Shtyp Email-in..."><br>
 
 			<textarea id = "message" name = "message" class = "form-control" placeholder = "Shtyp Mesazhin..." row = "6"></textarea><br>
-
+			<input type="hidden" name="token" value="<?php echo Token::generate(); ?>"/>
 			<input type = "submit" class = "form-control submit" value = "Dergoni Mesazhin">
 
 

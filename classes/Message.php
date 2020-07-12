@@ -18,7 +18,13 @@ class Message {
 		
 	// }
 
-	
+	public function create($fields = array()) {
+
+		if(!$this->_db->insert('messages', $fields)) {
+			throw new Exception('Ndodhi nje problem gjate krijimit te llogarise tuaj!');
+		}
+		
+	}
 
 
 	public function fetchMessages() {		

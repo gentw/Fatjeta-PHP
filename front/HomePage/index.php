@@ -20,13 +20,13 @@
                     <a href="#">Home</a>
                 </li>
                 <li>
-                    <a href="../about.html">About us</a>
+                    <a href="../about.php">About us</a>
                 </li>
                 <li>
-                    <a href="../Galeria/gallery.html">Gallery</a>
+                    <a href="../Galeria/gallery.php">Gallery</a>
                 </li>
                 <li>
-                    <a href="../KontaktForma/Kontakt Forma.html">Contact us</a>
+                    <a href="../KontaktForma/Kontakt Forma.php">Contact us</a>
                 </li>
             </ul>
         </div>
