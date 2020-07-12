@@ -73,7 +73,7 @@ if(Token::check(Input::get('token'))) {
 
     <div class="form-group">
     	<input type="hidden" name="token" value="<?php echo Token::generate(); ?>"/>
-        <input type="submit" name="submit" class="btn btn-primary" value="Upload">
+        <input type="submit" name="submit" class="btn btn-primary" value="Ngarko">
     </div>
 
 </form>

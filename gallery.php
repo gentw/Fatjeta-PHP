@@ -22,7 +22,7 @@
 
 		<div class="container">
 	        <h1 style="margin-top: 10px;">Gallery</h1>
-	        <ul><li><a href="gallery.php">View all photos</a></li><li><a href="?action=add">Upload new photo</a></li></ul>
+	        <ul><li><a href="gallery.php">Te gjitha fotot</a></li><li><a href="?action=add">Ngarko nje foto te re</a></li></ul>
 	        <?php
 	            switch($action){
 	                case "add":

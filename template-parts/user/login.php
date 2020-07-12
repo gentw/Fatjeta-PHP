@@ -32,7 +32,7 @@ if (Token::check(Input::get('token'))) {
 ?>
 
 <div class="login">
-    <h2 class="text-center">Paneli Adminit :-)</h2>
+    <h2 class="text-center">Admin Panel - Login</h2>
   
     <form action="" method="post">
         <div class="form-group">
